@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>ImageInfo</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>AlphanumComparator.java</name>
+			<type>1</type>
+			<location>E:/Java/workspace/OpenSource/AlphanumComparator.java</location>
+		</link>
+		<link>
+			<name>OpenSource</name>
+			<type>2</type>
+			<location>E:/Java/OpenSource</location>
+		</link>
+	</linkedResources>
+</projectDescription>
