@@ -21,14 +21,8 @@ public class ImageInfo {
 		private String src;
 		private String srcThumbnail;
 		
-		ImageData() {
-			d = new Dimension();
-		}
-		ImageData(Dimension _d) {
-			d = _d;
-		}
 		ImageData(Dimension _d, String _src) {
-			this(_d);
+			d = _d;
 			src = _src;
 		}
 		ImageData(Dimension _d, String _src, String _srcThumbnail) {
@@ -36,51 +30,19 @@ public class ImageInfo {
 			srcThumbnail = _srcThumbnail;
 		}
 		
-		public void setDimension(Dimension d) {
-			this.d = d;
-		}
-		
-		public void setSource(String name) {
-			src = name;
-		}
-		
-		public void setSourceThumbnail(String thumb) {
-			srcThumbnail = thumb;
-		}
-		
-		public Dimension getDimension() {
-			return d;
-		}
-		
-		public int getWidth() {
-			return d.width;
-		}
-		
-		public int getHeight() {
-			return d.height;
-		}
-		
-		public String getSource() {
-			return src;
-		}
-		
-		public String getSourceThumbnail() {
-			return srcThumbnail;
-		}
-		
 		public String toString() {
 			String twoTabs = "\t\t";
 			String result = twoTabs+ "\"src\": \"" + src + "\",\n" + 
 					twoTabs + "\"msrc\": \"" + srcThumbnail + "\",\n" +
-					twoTabs + "\"w\":" + this.getWidth() + ",\n" + 
-					twoTabs + "\"h\":" + this.getHeight();
+					twoTabs + "\"w\":" + this.d.width + ",\n" + 
+					twoTabs + "\"h\":" + this.d.height;
 			return "\t{\n" + result + "\n\t},";
 		}
 	}
 	
 	public static void main(String args[]) {
 		String folder = "images/nature/";
-		String folderString = "images\\nature";
+		String folderString = folder.replace("/", "\\");
 		String projectLocationString = "E:\\Docs\\HTML CSS Javascript programming\\irene-photography-bootstrap\\";
 		ArrayList<File> files = getListOfFiles(new File(projectLocationString + folderString));
 		
@@ -93,9 +55,7 @@ public class ImageInfo {
 		
 		String result = "[\n";
 		for(File f : files) {
-			//System.out.println("file: " + f.toString());
 			if(isThumbnail(f)) {
-				//System.out.println("file " + f.getName() + " is a thumbnail, skipping");
 				continue;
 			}
 			String src = folder + f.getName();
@@ -140,7 +100,6 @@ public class ImageInfo {
 		    	if (!f.getName().contains(".") || f.getName().contains(".db")) {
 		    		continue;
 		    	}
-		    	//System.out.println("adding file " + f.getName());
 		    	files.add(f);
 	      	}
 	    }
